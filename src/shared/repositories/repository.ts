@@ -7,7 +7,7 @@ import httpStatus from 'http-status';
 import { ErrorHelper } from '../errors/errorhelper';
 
 export class Repository<ModelType extends Document & ICRUDDocument> implements ICRUDRepository<ModelType> {
-  constructor(private modelInstance: Model<ModelType>) {}
+  constructor(protected modelInstance: Model<ModelType>) {}
 
   async findAll(pagination: PaginationDto): Promise<ModelType[]> {
     const dto = await this.modelInstance
