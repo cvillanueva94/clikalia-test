@@ -9,7 +9,7 @@ import httpStatus from 'http-status';
 import morganMiddleware from './config/morgan-middleware';
 
 import { connection } from './config/database';
-// import { registerRoutes } from './routes';
+import { registerRoutes } from './routes';
 
 export class Server {
   private readonly express: express.Express;
@@ -36,7 +36,7 @@ export class Server {
     });
 
     connection();
-    // registerRoutes(router);
+    registerRoutes(router);
 
     router.use((err: Error, req: Request, res: Response, _next: () => void) => {
       console.log(err);
