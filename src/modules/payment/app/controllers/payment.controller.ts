@@ -3,7 +3,6 @@ import httpStatus from 'http-status';
 import { PaymentService } from '../services/payment.service';
 import { GenericError } from '../../../../shared/errors/genericerror';
 import { ErrorHelper } from '../../../../shared/errors/errorhelper';
-import { NewPaymentDto } from '../dtos/new-payment.dto';
 import { ValidateDto } from '../../../../shared/validator/validator';
 import { PayDto } from '../dtos/pay.dto';
 import { RefundDto } from '../dtos/refund.dto';

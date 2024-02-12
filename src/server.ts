@@ -10,6 +10,7 @@ import morganMiddleware from './config/morgan-middleware';
 
 import { connection } from './config/database';
 import { registerRoutes } from './routes';
+import Logger from './lib/logger';
 
 export class Server {
   private readonly express: express.Express;
@@ -38,8 +39,9 @@ export class Server {
     connection();
     registerRoutes(router);
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     router.use((err: Error, req: Request, res: Response, _next: () => void) => {
-      console.log(err);
+      Logger.error(err);
       res.status(httpStatus.INTERNAL_SERVER_ERROR).send(err.message);
     });
   }
@@ -48,8 +50,8 @@ export class Server {
     return new Promise(resolve => {
       const env = this.express.get('env') as string;
       this.httpServer = this.express.listen(this.port, () => {
-        console.log(` Clikalia App is running at http://localhost:${this.port} in ${env} mode`);
-        console.log('  Press CTRL-C to stop\n');
+        Logger.info(` Clikalia App is running at http://localhost:${this.port} in ${env} mode`);
+        Logger.info('  Press CTRL-C to stop\n');
         resolve();
       });
     });

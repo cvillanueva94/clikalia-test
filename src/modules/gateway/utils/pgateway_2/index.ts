@@ -5,7 +5,6 @@ import { v4 } from 'uuid';
 import { GatewayRefundDto } from '../../dto/gateway.refund.dto';
 import { GatewayRefundResponseDto } from '../../dto/gateway.refund-response.dto';
 import { GenericError } from '../../../../shared/errors/genericerror';
-import { GatewayPartialRefundDto } from '../../dto/gateway.partial-refund.dto';
 import { GatewayPartialRefundResponseDto } from '../../dto/gateway.partial-refund-response.dto';
 
 export class PGateway_2 implements AbstractGateway {
@@ -40,7 +39,7 @@ export class PGateway_2 implements AbstractGateway {
     return responseDto;
   }
 
-  async partialReimburse(dto: GatewayPartialRefundDto): Promise<GatewayPartialRefundResponseDto> {
+  async partialReimburse(): Promise<GatewayPartialRefundResponseDto> {
     // Lanzamos un error por solicitud de la problematica
     throw new GenericError('La pasarela no permite este tipo de reembolso', 400);
   }

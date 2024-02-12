@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { IGateway } from './IGateway';
 import { GatewayPayResponseDto } from '../dto/gateway.pay-response.dto';
 import { GatewayPayDto } from '../dto/gateway.pay.dto';
@@ -18,7 +19,7 @@ export abstract class AbstractGateway implements IGateway {
   }
 
   /**
-   * Método para realizar reembolsar todo lo que queda del pago
+   * Método para realizar reembolsar todo lo que queda del
    *
    * @param {GatewayRefundDto} dto - description of parameter
    * @return {Promise<GatewayRefundResponseDto>} description of return value

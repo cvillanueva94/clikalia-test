@@ -1,9 +1,10 @@
 import Logger from '../../lib/logger';
 import httpStatus from 'http-status';
 import { GenericError } from './genericerror';
+import { IError } from '../interfaces/IError';
 
 export class ErrorHelper {
-  public static processError(error: any): GenericError {
+  public static processError(error: GenericError | IError): GenericError {
     let result: GenericError;
     if (error instanceof GenericError) {
       result = error;
@@ -19,6 +20,7 @@ export class ErrorHelper {
     return result;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public static mongoDBError(error: any): GenericError {
     let result: GenericError;
     if (error.code === 11000) {

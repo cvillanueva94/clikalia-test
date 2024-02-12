@@ -11,7 +11,7 @@ export class PaymentMapper extends CrudMapper<PaymentDocument, NewPaymentDto, Up
    * @return {NewPaymentDto} The converted NewPaymentDto object.
    */
   DocumentToDto(paymentDocument: PaymentDocument): NewPaymentDto {
-    const { id, amountPaid, refundedAmount, transaction, gateway, createdAt, updatedAt } = paymentDocument;
+    const { id, amountPaid, transaction, gateway, createdAt, updatedAt } = paymentDocument;
     const dto = new NewPaymentDto();
     dto.id = id;
     dto.amountPaid = amountPaid;

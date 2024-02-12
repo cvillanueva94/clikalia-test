@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { validate } from 'class-validator';
 import { GenericError } from '../errors/genericerror';
-import { ErrorHelper } from '../errors/errorhelper';
 
 interface IValidateDtoResponse {
   isValid: boolean;
   error?: GenericError;
-  dto: any;
+  dto: Object;
 }
 
-export async function ValidateDto(dto: any, data: Object): Promise<IValidateDtoResponse> {
+export async function ValidateDto(dto: Object, data: Object): Promise<IValidateDtoResponse> {
   const keys = Object.keys(data);
 
   keys.forEach(key => {
