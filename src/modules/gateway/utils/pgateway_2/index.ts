@@ -41,18 +41,8 @@ export class PGateway_2 implements AbstractGateway {
   }
 
   async partialReimburse(dto: GatewayPartialRefundDto): Promise<GatewayPartialRefundResponseDto> {
-    if (!this.isEnabled) {
-      throw new GenericError('Pasarela PGateway_2 deshabilitada.', 400);
-    }
-    // Aqui iria toda la logica asociada a la pasarela PGateway_1
-    // como es solo una simulacion construimos la respuesta
-
-    const responseDto = new GatewayPartialRefundResponseDto();
-    responseDto.amount = dto.amount;
-    responseDto.gateway = dto.gateway;
-    responseDto.transaction = dto.transaction;
-
-    return responseDto;
+    // Lanzamos un error por solicitud de la problematica
+    throw new GenericError('La pasarela no permite este tipo de reembolso', 400);
   }
 
   getStatus(): boolean {
