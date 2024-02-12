@@ -1,6 +1,8 @@
 import { ClikaliaApp } from './clikalia-app';
+import { config } from 'dotenv';
 
 try {
+  config();
   new ClikaliaApp().start();
 } catch (e) {
   console.log(e);

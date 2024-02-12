@@ -1,21 +1,20 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
-    "target": "es6",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "sourceMap": false,
-    "rootDir": ".",
-    "strict": true,
-    "noEmit": false,
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "outDir": "./dist"
+    "resolveJsonModule": true
   },
-  "include": [
-    "src/**/**.ts",
-    "__tests__/**/**.ts"
-    ],
+  "include": ["src/**/**.ts", "__tests__/**/**.ts"],
   "exclude": ["node_modules"]
 }
