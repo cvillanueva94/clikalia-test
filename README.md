@@ -50,6 +50,16 @@ El proyecto se estructura en dos módulos principales: `gateway` y `payment`, ca
 
 Se hacen uso de los patrones Singleton y Repositorio para abordar la problemática planteada, lo que ayuda a garantizar la eficiencia y la coherencia en la gestión de las pasarelas de pago.
 
+### Pruebas
+
+Se llevaron a cabo pruebas de extremo a extremo (E2E) para asegurar una integración más sólida entre las distintas capas del sistema. Los resultados obtenidos se presentan a continuación:
+
+| % Stmts | % Branch | % Funcs | % Lines|
+| -------- | ------- | ------- | ------- |
+| 90.25 |    55.17 |   83.33 |   90.74   |
+
+Estos resultados reflejan una cobertura sustancial del código, lo que indica una amplia gama de casos de prueba abordados en el proceso de pruebas E2E. Sin embargo, es importante tener en cuenta que la cobertura de ramificaciones es relativamente más baja, lo que sugiere áreas donde se podrían mejorar las pruebas para abordar diferentes caminos de ejecución dentro del código.
+
 ### Recomendaciones
 
 Para llevar el proyecto a producción de manera óptima, se recomienda configurar un proceso de integración y entrega continuas (CI/CD) para automatizar pruebas y despliegues. Además, si es necesario para la infraestructura, se sugiere dockerizar el API para facilitar la gestión y escalabilidad de los recursos en producción.
