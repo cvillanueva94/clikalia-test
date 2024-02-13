@@ -34,20 +34,22 @@ A continuación se detallan los endpoints disponibles en esta API:
 
 ### Pasarelas de pagos
 
-Se creó un modulo para las pasarelas de pago, el mismo cuanta con un README en el cual se describe brevemente el módulo y se da una guía de cómo agregar una nueva pasarela.
+Se ha desarrollado un módulo para la gestión de pasarelas de pago. Este módulo proporciona una guía detallada sobre su implementación y cómo agregar nuevas pasarelas de manera efectiva.
 
-** Explicar como seria mejor habilitar/deshabilitar las difertentes pasarelas y tambien las opciones que tenga cada una
+Para mejorar la habilitación y deshabilitación de las diferentes pasarelas, se sugiere implementar un sistema dinámico que permita activar o desactivar pasarelas de forma fácil y rápida, posiblemente a través de un archivo de configuración o una interfaz de usuario intuitiva. Además, sería útil proporcionar opciones personalizadas para cada pasarela, permitiendo configurar parámetros específicos según las necesidades del usuario.
 
 ### Linterns
 
-Se utiliza [ESLint](https://eslint.org) como linter en el proyecto. Con algunas reglas y guías para TypeScript.
+El proyecto utiliza [ESLint](https://eslint.org) como linter, que proporciona reglas y directrices para mantener un código limpio y consistente, especialmente en entornos TypeScript.
 
-Se utiliza [Prettier](https://prettier.io) para garantizar un correcto formato del código.
+También se integra [Prettier](https://prettier.io) para asegurar un formato coherente y legible del código en todo el proyecto.
 
 ### Patrones y arquitectura
 
-El proyecto se divide en dos modulos principales `gateway` y `payment`, los cuales tienen una arquitectura por capas. Actualmente tiene funcional dos capas, Aplicación e Infraestructura. Se pretendía implementar un enfoque de tres capas (Dominio, Aplicación e Infraestructura) pero por falta de tiempo no se logró integrar la capa de Dominio en el sistema. Se hace uso de los patrones Singleton y Repositorio, en la solución de la problemática planteada.
+El proyecto se estructura en dos módulos principales: `gateway` y `payment`, cada uno con una arquitectura de capas. Actualmente, estas capas incluyen Aplicación e Infraestructura. Aunque se tenía la intención de implementar un enfoque de tres capas (Dominio, Aplicación e Infraestructura), esta última no se integró debido a restricciones de tiempo.
+
+Se hacen uso de los patrones Singleton y Repositorio para abordar la problemática planteada, lo que ayuda a garantizar la eficiencia y la coherencia en la gestión de las pasarelas de pago.
 
 ### Recomendaciones
 
-**Explicar que para llevar a produccion seria bueno configurar un ci/cd al igual que dockerizar el api de ser necesario para la infraestructura
+Para llevar el proyecto a producción de manera óptima, se recomienda configurar un proceso de integración y entrega continuas (CI/CD) para automatizar pruebas y despliegues. Además, si es necesario para la infraestructura, se sugiere dockerizar el API para facilitar la gestión y escalabilidad de los recursos en producción.
