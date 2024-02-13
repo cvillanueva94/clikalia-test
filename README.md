@@ -60,6 +60,12 @@ Se llevaron a cabo pruebas de extremo a extremo (E2E) para asegurar una integrac
 
 Estos resultados reflejan una cobertura sustancial del código, lo que indica una amplia gama de casos de prueba abordados en el proceso de pruebas E2E. Sin embargo, es importante tener en cuenta que la cobertura de ramificaciones es relativamente más baja, lo que sugiere áreas donde se podrían mejorar las pruebas para abordar diferentes caminos de ejecución dentro del código.
 
+### Git
+
+Se sigue el estándar de Conventional Commits para la estructura de los mensajes de commit, lo que facilita la comprensión y el seguimiento de los cambios en el repositorio. Además, se ha implementado un script automatizado para versionar el API al llevarlo a producción, lo que incluye la generación de un CHANGELOG y la creación de una etiqueta (tag) en Git correspondiente a la versión. Esta práctica asegura una gestión ordenada y consistente de las versiones del software, lo que simplifica el proceso de seguimiento y despliegue de nuevas versiones en producción.
+
+> OJO: a pesar de usar Conventional Commits, los mensajes de los commit no son los mejores.
+
 ### Recomendaciones
 
 Para llevar el proyecto a producción de manera óptima, se recomienda configurar un proceso de integración y entrega continuas (CI/CD) para automatizar pruebas y despliegues. Además, si es necesario para la infraestructura, se sugiere dockerizar el API para facilitar la gestión y escalabilidad de los recursos en producción.
