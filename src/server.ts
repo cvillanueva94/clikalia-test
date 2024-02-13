@@ -8,6 +8,9 @@ import * as http from 'http';
 import httpStatus from 'http-status';
 import morganMiddleware from './config/morgan-middleware';
 
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger-output.json';
+
 import { connection } from './config/database';
 import { registerRoutes } from './routes';
 import Logger from './lib/logger';
@@ -35,6 +38,8 @@ export class Server {
     router.get('/', (req: Request, res: Response) => {
       res.status(httpStatus.OK).send('¡Hola, mundo!');
     });
+
+    this.express.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
     connection();
     registerRoutes(router);

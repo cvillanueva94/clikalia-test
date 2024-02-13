@@ -66,6 +66,10 @@ Se sigue el estándar de Conventional Commits para la estructura de los mensajes
 
 > OJO: a pesar de usar Conventional Commits, los mensajes de los commit no son los mejores.
 
+### Documentación
+
+Se emplea la herramienta [Swagger](https://swagger.io) para documentar exhaustivamente el API, lo que proporciona una referencia clara y detallada de los endpoints, parámetros y respuestas disponibles. Además, se ha elaborado un README completo que ofrece orientación sobre cómo utilizar la aplicación de manera efectiva, incluyendo instrucciones de instalación, configuración y ejemplos de uso. Esta combinación de recursos asegura una documentación completa y accesible para los desarrolladores que trabajan con el API.
+
 ### Recomendaciones
 
 Para llevar el proyecto a producción de manera óptima, se recomienda configurar un proceso de integración y entrega continuas (CI/CD) para automatizar pruebas y despliegues. Además, si es necesario para la infraestructura, se sugiere dockerizar el API para facilitar la gestión y escalabilidad de los recursos en producción.
