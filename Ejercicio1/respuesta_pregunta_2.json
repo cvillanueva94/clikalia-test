@@ -1,0 +1,115 @@
+[{
+  "_id": 1,
+  "num": "001",
+  "name": "Bulbasaur"
+},
+{
+  "_id": 10,
+  "num": "010",
+  "name": "Caterpie"
+},
+{
+  "_id": 13,
+  "num": "013",
+  "name": "Weedle"
+},
+{
+  "_id": 16,
+  "num": "016",
+  "name": "Pidgey"
+},
+{
+  "_id": 19,
+  "num": "019",
+  "name": "Rattata"
+},
+{
+  "_id": 21,
+  "num": "021",
+  "name": "Spearow"
+},
+{
+  "_id": 23,
+  "num": "023",
+  "name": "Ekans"
+},
+{
+  "_id": 29,
+  "num": "029",
+  "name": "Nidoran ♀ (Female)"
+},
+{
+  "_id": 32,
+  "num": "032",
+  "name": "Nidoran ♂ (Male)"
+},
+{
+  "_id": 41,
+  "num": "041",
+  "name": "Zubat"
+},
+{
+  "_id": 43,
+  "num": "043",
+  "name": "Oddish"
+},
+{
+  "_id": 46,
+  "num": "046",
+  "name": "Paras"
+},
+{
+  "_id": 48,
+  "num": "048",
+  "name": "Venonat"
+},
+{
+  "_id": 54,
+  "num": "054",
+  "name": "Psyduck"
+},
+{
+  "_id": 60,
+  "num": "060",
+  "name": "Poliwag"
+},
+{
+  "_id": 69,
+  "num": "069",
+  "name": "Bellsprout"
+},
+{
+  "_id": 72,
+  "num": "072",
+  "name": "Tentacool"
+},
+{
+  "_id": 74,
+  "num": "074",
+  "name": "Geodude"
+},
+{
+  "_id": 84,
+  "num": "084",
+  "name": "Doduo"
+},
+{
+  "_id": 92,
+  "num": "092",
+  "name": "Gastly"
+},
+{
+  "_id": 96,
+  "num": "096",
+  "name": "Drowzee"
+},
+{
+  "_id": 98,
+  "num": "098",
+  "name": "Krabby"
+},
+{
+  "_id": 118,
+  "num": "118",
+  "name": "Goldeen"
+}]

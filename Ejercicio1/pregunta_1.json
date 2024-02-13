@@ -1,0 +1,41 @@
+db.getCollection('pokemon').aggregate(
+  [
+    {
+      $match: {
+        next_evolution: { $exists: true }
+      }
+    },
+    { $unwind: { path: '$next_evolution' } },
+    {
+      $lookup: {
+        from: 'pokemon',
+        localField: 'next_evolution.num',
+        foreignField: 'num',
+        as: 'evolution'
+      }
+    },
+    { $unwind: { path: '$evolution' } },
+    {
+      $project: {
+        id: 1,
+        name: 1,
+        num: 1,
+        spawn_time: 1,
+        'evolution.name': 1,
+        'evolution.num': 1,
+        'evolution.spawn_time': 1
+      }
+    },
+    {
+      $group: {
+        _id: '$id',
+        num: { $first: '$num' },
+        name: { $first: '$name' },
+        spawn_time: { $first: '$spawn_time' },
+        evolution: { $push: '$evolution' }
+      }
+    },
+    { $sort: { num: 1 } }
+  ],
+  { maxTimeMS: 60000, allowDiskUse: true }
+);

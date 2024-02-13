@@ -1,0 +1,45 @@
+db.getCollection('pokemon').aggregate(
+  [
+    {
+      $match: {
+        next_evolution: { $exists: true },
+        prev_evolution: { $exists: false }
+      }
+    },
+    { $unwind: { path: '$next_evolution' } },
+    {
+      $lookup: {
+        from: 'pokemon',
+        localField: 'next_evolution.num',
+        foreignField: 'num',
+        as: 'evolution'
+      }
+    },
+    { $unwind: { path: '$evolution' } },
+    {
+      $match: {
+        'evolution.avg_spawns': { $gt: 4 }
+      }
+    },
+    {
+      $project: {
+        id: 1,
+        name: 1,
+        num: 1,
+        spawn_time: 1,
+        'evolution.name': 1,
+        'evolution.num': 1,
+        'evolution.avg_spawns': 1
+      }
+    },
+    {
+      $group: {
+        _id: '$id',
+        num: { $first: '$num' },
+        name: { $first: '$name' }
+      }
+    },
+    { $sort: { num: 1 } }
+  ],
+  { maxTimeMS: 60000, allowDiskUse: true }
+);
