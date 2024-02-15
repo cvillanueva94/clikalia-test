@@ -1,0 +1,186 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.8",
+    "title": "Clikalia-test",
+    "description": "Respuesta a prueba técnica de Clikalia"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Payment",
+      "description": "Módulo para procesar los pagos"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/payment/pay": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "description": "Ruta para procesar los pagos.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Información necesaria para procesar el pago",
+            "schema": {
+              "$ref": "#/definitions/PayDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Respuesta afirmativa del pago",
+            "schema": {
+              "$ref": "#/definitions/PayResponseDto"
+            }
+          }
+        }
+      }
+    },
+    "/payment/refund": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "description": "Ruta para procesar reembolsos totales.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Información necesaria para procesar el reembolso",
+            "schema": {
+              "$ref": "#/definitions/RefundDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Respuesta afirmativa del reembolso",
+            "schema": {
+              "$ref": "#/definitions/RefundResponseDto"
+            }
+          }
+        }
+      }
+    },
+    "/payment/partial-refund": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "description": "Ruta para procesar los reembolsos parciales.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Información necesaria para procesar el reembolso",
+            "schema": {
+              "$ref": "#/definitions/PartialRefundDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Respuesta afirmativa del reembolso",
+            "schema": {
+              "$ref": "#/definitions/PartialRefundResponseDto"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PayDto": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "example": 10
+        },
+        "gateway": {
+          "type": "string",
+          "example": "PGateway_1"
+        }
+      }
+    },
+    "PayResponseDto": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "example": 10
+        },
+        "gateway": {
+          "type": "string",
+          "example": "PGateway_1"
+        },
+        "transaction": {
+          "type": "string",
+          "example": "2a008a68-5dbe-4ca9-b855-0f95d792f69a"
+        }
+      }
+    },
+    "RefundDto": {
+      "type": "object",
+      "properties": {
+        "transaction": {
+          "type": "string",
+          "example": "2a008a68-5dbe-4ca9-b855-0f95d792f69a"
+        }
+      }
+    },
+    "RefundResponseDto": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "example": 10
+        },
+        "transaction": {
+          "type": "string",
+          "example": "2a008a68-5dbe-4ca9-b855-0f95d792f69a"
+        }
+      }
+    },
+    "PartialRefundDto": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "example": 10
+        },
+        "transaction": {
+          "type": "string",
+          "example": "2a008a68-5dbe-4ca9-b855-0f95d792f69a"
+        }
+      }
+    },
+    "PartialRefundResponseDto": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "example": 10
+        },
+        "transaction": {
+          "type": "string",
+          "example": "2a008a68-5dbe-4ca9-b855-0f95d792f69a"
+        }
+      }
+    }
+  }
+}
